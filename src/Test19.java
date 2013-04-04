@@ -20,13 +20,13 @@ public class Test19 extends Common {
 	public void test_scorecard_ui() throws Exception {
 		login();
 		gotoProperty("standard");
-		driver.findElement(By.linkText("ScoreCard")).click();
+
         Matcher m = ps.matcher(driver.getCurrentUrl());
-        String scorecardId = m.replaceAll("");
+        String sId = m.replaceAll("");
 
 		Thread.sleep(5000);
 		
-		String[] matchList = {scorecardId, testStandardId};
+		String[] matchList = {sId, testStandardId};
 		source = formatPageSource(matchList);
 		
 		//remove dynamic tracker id
